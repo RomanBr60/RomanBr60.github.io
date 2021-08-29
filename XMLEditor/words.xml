@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dic>
+	<heb>
+		<word>יד</word>
+		<word>ראש</word>
+		<word>רגל</word>
+		<word>עין</word>
+		<word>בטן</word>
+		<word>כלב</word>
+		<word>חתול</word>
+		<word>צב</word>
+		<word>דג</word>
+		<word>פיל</word>
+		<word>דוב</word>
+	</heb>
+	<rus>
+		<word>рука</word>
+		<word>голова</word>
+		<word>нога</word>
+		<word>глаз</word>
+		<word>живот</word>
+		<word>собака</word>
+		<word>кошка</word>
+		<word>черепаха</word>
+		<word>рыба</word>
+		<word>слон</word>
+		<word>Медведь</word>
+	</rus>
+	<en>
+		<word>hand</word>
+		<word>head</word>
+		<word>leg</word>
+		<word>eye</word>
+		<word>stomach</word>
+		<word>dog</word>
+		<word>cat</word>
+		<word>turtle</word>
+		<word>fish</word>
+		<word>elephant</word>
+		<word>bear</word>
+	</en>
+</dic>
+	

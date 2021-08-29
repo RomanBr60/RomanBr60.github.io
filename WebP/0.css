@@ -1,0 +1,83 @@
+html, body {
+	background-image: url("http://www.w3.org/Icons/Backgrounds/recbg.jpg");
+	box-sizing: border-box;
+}
+
+table, td, th, div {
+        border-radius: 1em;
+        align: center
+        
+}
+
+.dt1 {
+	overflow: auto;
+	border: 3px ridge silver;
+	background-color: #9acd32;
+}
+
+.dt21 {
+	overflow: auto;
+	text-align: center;
+	border: 5px ridge silver;
+}
+
+.dt21:active {
+	border: 3px ridge black;
+}
+
+.dt22 {
+	overflow: auto;
+	text-align: center;
+	border: 5px ridge silver;
+}
+
+.dt22:hover {
+	border: 3px ridge black;
+}
+
+
+.dt3 {
+	overflow: auto;
+	text-align: center;
+	border: 4px ridge silver; 
+}
+
+
+.dt4 {
+	overflow: auto;
+	position: relative;
+	left: 15%;
+	top: 0;
+	animation: mymove 20s infinite;
+	width: 10em;
+}
+
+/* Standard syntax */
+@keyframes mymove 
+{ 
+	50% {left: 70%;}
+	
+	10%   {color: red;}
+    25%  {color: orange;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
+
+a, li, .text {text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; color: white; }
+a:hover,li:hover { text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; color: silver; }
+a:active, li:active { text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; color: gray; }
+a, li {transition: color 0.3s; } 
+
+td, th, div, author, p, h1, h2, h3, h4, h5, h6 {text-shadow: 4px 4px 5px black; color: white; }
+
+ol, ul, li {padding: 0 0; margin: 10px;  } 
+
+#toggleMe{
+	background-color: #cfc;
+	display: none;
+	padding: 1em;
+	margin: 1px 0; 
+}
+
+*, div, table, td,th, tr { box-sizing: border-box; } 

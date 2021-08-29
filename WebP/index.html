@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he">
+
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="My Mobile Web page" />
+<meta name="author" content="Roman Braverman" />
+<meta name="generator" content="slidify" />
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta id="viewport" name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="robots" content="INDEX, FOLLOW">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<link rel="shortcut icon" href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif" />
+<link rel="apple-touch-icon" href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif" />
+
+
+<LINK rel="stylesheet" type="text/css" href="0.css" />
+<LINK rel="stylesheet" type="text/css" href="1.css" />
+
+<title>Web Page</title>
+
+<author class="t1" id="page0"> <a
+	href="mailto:qwerty60@walla.com" title="My Email">
+	<h2
+		style="margin: 0 0 0 15px; width: 200px; color: white; background-color: purple;">Roman
+		Braverman</h2>
+</a></author>
+
+<script type="text/javascript" charset="utf-8" src="1.js"></script>
+</head>
+
+<body>
+	<div style="margin: 12px 0 0 10px;" class="text">
+		<select id="dVal" onchange="clock()">
+			<option value="v1">Full date</option>
+			<option value="v2">Short Date</option>
+		</select> <select id="tVal" onchange="clock()">
+			<option value="v1">24hr</option>
+			<option value="v2">12hr</option>
+		</select>
+
+		<div id="DT" class="text1"></div>
+	</div>
+
+
+	<h1 align="center" class="dt4">
+		<u><em>Roman's Web Page</em></u>
+	</h1>
+
+	<div align="center"
+		style="width: 100%; background-color: silver; border: 6px ridge red; overflow: auto">
+
+		<table
+			style="background-color: blue; border: 1px solid red; color: white"
+			align="center">
+			<tr>
+				<td>
+					<table>
+						<thead>
+							<div data-role="header">
+								<CAPTION>
+									<h1>
+										<em><u>Menu</u></em>
+									</h1>
+									<hr />
+								</CAPTION>
+							</div>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="dt1">
+									<div data-role="content">
+										<ol class="l1">
+											<li><strong><em><a href="#page1">ID &
+															Prime number varification</a></em></strong></li>
+											<li><strong><em><a href="#page2">Page
+															One</a></em></strong></li>
+											<li><strong><em><a href="#page3">Page
+															Two</a></em></strong></li>
+											<li><strong><em><a href="#page4">Page
+															Three</a></em></strong></li>
+
+											<li><strong><em><a href="#page5"
+														Title="Dom + JavaScript"> Dynamic html + Dom</a></em></strong></li>
+
+											<li><strong><em><a href="#page6">Page
+															Four</a></em></strong></li>
+											<li><strong><em><a href="#page7">Page
+															Five</a></em></strong></li>
+											<li><strong><em><a href="#page8">Page
+															Six</a></em></strong></li>
+
+										</ol>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+
+						<tfoot>
+							<tr>
+								<td>
+									<hr />
+									<div align="center" data-role="footer">
+										<h4>Page Footer</h4>
+									</div>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	<hr />
+
+	<div align="center" width="100%"
+		style="border: 6px ridge gray; overflow: auto; position: relative;">
+
+		<div class="dt3" data-role="page" id="page1"
+			style="padding: 0 0 30px; background-color: silver;">
+
+			<h1 style="margin: 30px 0 0 0;" align="center" class="text">
+				<u>ID validation</u>
+			</h1>
+			<div style="margin: 3px 0 0 0;" align="center" class="text">
+				Enter your ID: <input type="text" name="ID" id="IDBox" maxlength="9" />
+				<input type="button" value="Validate" onclick="Valid()" />
+			</div>
+
+			<h1 style="margin: 50px 0 0 0;" align="center" class="text">
+				<u>Prime number validation</u>
+			</h1>
+
+			<div style="margin: 3px 0 0 0;" align="center" class="text">
+				Enter a number: <input type="text" id="primetest" value="" /> <input
+					type="button" value="Validate" onclick="Prime();" />
+
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="dt3" style="background-color: red" data-role="page"
+			id="page2">
+			<div data-role="header">
+				<h1>
+					<u>Page One</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: green"
+			data-role="page" id="page3">
+			<div data-role="header">
+				<h1>
+					<u>Page Two</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: blue;"
+			data-role="page" id="page4">
+			<div data-role="header">
+				<h1>
+					<u>Page Three</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" data-role="page" id="page5"
+			style="background-color: pink; padding: 0 0 20px;">
+			<h1 id="hh" class="text">
+				<u>Welcome to Dynamic HTML. Using a DOM function</u>
+			</h1>
+			<h3>
+				<a id="showhide" href="#" onclick="changeDisplayState();">Show
+					paragraph</a>
+			</h3>
+
+			<div id="toggleMe">
+				<dl class="text">
+					<dt class="text">This is the paragraph that is only displayed
+						on request.</dt>
+					<dd class="text">
+						<table align="center" class="text">
+							<tr>
+								<td align="left" class="dt3">
+									<ol class="text">
+										<li class="e">Change the color, size, and typeface of
+											text</li>
+										<li class="e">Show and hide text</li>
+										<li class="e">And much, much more</li>
+
+									</ol>
+								</td>
+							</tr>
+						</table>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="text">
+				<strong><em>The general flow of the document
+						continues. We've only just begun!</em></strong>
+			</div>
+
+			<h4 id="demo" class="text">A Paragraph</h4>
+			<button type="button" onclick="myFunction();" style="margin: -10px">Try
+				it</button>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: yellow;"
+			data-role="page" id="page6">
+			<div data-role="header">
+				<h1>
+					<u>Page Four</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: orange;"
+			data-role="page" id="page7">
+			<div data-role="header">
+				<h1>
+					<u>Page Five</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: brown"
+			data-role="page" id="page8">
+			<div data-role="header">
+				<h1>
+					<u>Page Six</u>
+				</h1>
+			</div>
+			<div data-role="content">Content</div>
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div>
+		</div>
+		<hr />
+
+		<div width="100%" class="dt3" style="background-color: white"
+			data-role="page" align="center">
+			<em><h1>
+					<a href="#page0">Go up</a>
+				</h1> </em>
+
+			<table align="center">
+				<th width="190px"><em><h3>
+							<a href="view-source:1.html">View HTML source</a>
+						</h3></em></th>
+
+				<th width="190px"><em><h3>
+							<a href="view-source:0.css">View CSS source</a>
+						</h3></em></th>
+			</table>
+		</div>
+
+	</div>
+
+	<SCRIPT type="text/javascript">
+		function changeDisplayState() {
+			var d = document.getElementById('showhide');
+			var e = document.getElementById('toggleMe');
+			var f = document.getElementById("hh");
+
+			if (e.style.display === 'none' || e.style.display === '') {
+				e.style.display = 'block';
+				d.innerHTML = 'Hide paragraph';
+				f.style.color = "#990000";
+
+			} else {
+				e.style.display = 'none';
+				d.innerHTML = 'Show paragraph';
+				f.style.color = "white";
+			}
+		};
+
+		document.getElementById('showhide').onclick = function(e) {
+			e.preventDefault();
+			changeDisplayState();
+		};
+	</SCRIPT>
+
+</body>
+</html>

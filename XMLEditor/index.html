@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" manifest="manifest.appcache">
+
+<meta name="description" content="קורות חיים">
+<meta name="author" content="רומן ברברמן">
+<meta name="generator" content="slidify" />
+
+<meta property="og:title" content="קורות חיים">
+<meta property="og:type" content="קורות חיים">
+<!-- <meta property="og:url" content="http://www.emoji-cheat-sheet.com/"> -->
+<meta name="description" property="og:description" content="קורות חיים">
+<meta property="og:site_name" content="GitHub" />
+
+<meta property="og:locale" content="en_GB" />
+<meta property="og:locale:alternate" content="rus_RUS" />
+<meta property="og:locale:alternate" content="heb_IS" />
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+<head>
+<link rel="icon" type="image/x-icon" sizes="any"
+	href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif">
+<link rel="shortcut icon" type="image/x-icon" sizes="any"
+	href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="any"
+	href="http://www.w3.org/Icons/W3C/Beveled-Logo.gif">
+
+<title>List editor</title>
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="stylesheet" type="text/css" href="Menu.css">
+
+<script type="text/javascript" src="List_editor.js"></script>
+<script type="text/javascript" src="FileSaver.js"></script>
+</head>
+<body onload="load(fileName);">
+
+	<nav style="margin-top: 1%; padding: 0;" class="text">
+		<ul>
+
+			<li><a>File</a>
+				<ul>
+					<li draggable="true" onclick="NewDoc();"><a>New</a></li>
+					<li><a>Open</a></li>
+					<li onclick = "Save();"><a>Save</a></li>
+					<li onclick="ShowXml();"><a>Show the xml</a></li>
+					<li onclick="if (fileName != '') load(fileName); else alert('There is no file to reload');"><a>Reload the current file</a></li>
+				</ul></li>
+
+			<li><a>Languages</a>
+				<ul>
+					<li onclick="RemoveL();"><a>Remove</a></li>
+					<li onclick="RenameL();"><a>Rename</a></li>
+					<li onclick="InsertL();"><a>Insert</a></li>
+					<li><a>Add Before</a></li>
+					<li><a>Add After</a></li>
+				</ul></li>
+
+			<li><a>List</a>
+				<ul>
+					<li onclick="RemoveW();"><a>Remove</a></li>
+					<li onclick="RenameW();"><a>Rename</a></li>
+					<li onclick="InsertW()"><a>Insert</a></li>
+					<li><a>Add Before</a></li>
+					<li><a>Add After</a></li>
+				</ul></li>
+
+		</ul>
+	</nav>
+
+	<div class="text2" style="display: inline-table;">
+		<select multiple="multiple" id="sel"
+			onchange="ShowWords(this.options[this.selectedIndex].value);"
+			style="text-align: left; width: 100px; height: 262px; margin-top: 2%">
+		</select> <select multiple="multiple" id="txt"
+			style="text-align: left; width: 300px; height: 262px;">
+		</select> <br />
+
+		<div class = "text" style="display: inline-table;">
+			<p>
+				<input class="button1" type="button" value="Hide"
+					onclick="document.getElementById('txt1').style.display = 'none';">
+				<input class="button1" type="button" value="Show"
+					onclick="document.getElementById('txt1').style.display = '';">
+				<input class="button1" type="button" value="Update the list"
+					onclick="Show();">
+			</p>
+		</div>
+		<br />
+		<textarea rows="60" cols="60" id="txt1"
+			style="text-align: left; display: none;" autocorrect="off"
+			autocapitalize="off" wrap="off"></textarea>
+
+		<br />
+
+		<pre id="txt2" style="background: white; border: 2px solid gray;">
+		<br />
+		<code id="txt3"></code>
+		</pre>
+	</div>
+</body>
+</html>
