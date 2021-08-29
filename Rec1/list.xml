@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<list>
+		<Rec type = "Soup">
+			<Rec>מרק עדשים 1</Rec>
+			<Rec>מרק בורשט</Rec>
+			<Rec>מרק ירקות 1</Rec>
+		</Rec>
+		<Rec type = "Salad">
+			<Rec>סלט קינואה 1</Rec>
+		</Rec>
+		<Rec type = "Others">
+			<Rec>שקשוקה 1</Rec>
+		</Rec>
+			
+		<Type>
+			<Type name = "מרקים">Soup</Type>
+			<Type name = "סלטים">Salad</Type>
+			<Type name = "אחרים">Others</Type>
+		</Type>
+		<Author>
+			<Author loc = "https://www.facebook.com/RonenBr60" author = "רומן"></Author>
+		</Author>
+	</list>

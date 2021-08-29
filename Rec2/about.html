@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he">
+
+	<head>
+		<meta name="description" content="מתכונים">
+		<meta name="author" content="רומן">
+		<meta name="generator" content="slidify" />
+
+		<meta property="og:title" content="מתכונים">
+		<meta property="og:type" content="מתכונים">
+		<meta name="ROBOTS" content="index, follow">
+		<meta property="og:description" content="אודות האתר">
+		<meta property="og:site_name" content="GitHub" />
+
+		<meta property="og:locale" content="heb_IS" />
+		<meta property="og:locale:alternate" content="en_GB" />
+		<meta property="og:locale:alternate" content="rus_RUS" />
+
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />-->
+		<TITLE>מתכונים</TITLE>
+
+
+		<link rel="stylesheet" href="CSS/jquery-ui.css">
+		<link rel="stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="CSS/bootstrap-dialog.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="CSS/Main.css">
+		
+		<script type = "text/javascript" src = "https://apis.google.com/js/platform.js" async = "true"></script>		
+		<script type = "text/javascript" src = "JS/Main.js"></script>		
+
+		<!--<script type = "text/javascript" src = "JS/sweetalert-dev.js"></script>
+		<link rel="stylesheet" href="CSS/sweetalert.css">
+		<link rel="stylesheet" href="CSS/facebook.css">-->
+
+		<!--[if lt IE 9]>
+		<script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->		
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+		 window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1616981855234875',
+				xfbml      : true,
+				version    : 'v2.10'
+			});
+			FB.AppEvents.logPageView();
+		};
+		
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=1616981855234875";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<div data-role = "page" id = "pageone">
+		
+		<div id = "nav" name = "nav" data-role = "header">
+			<script>
+			nav.innerHTML = getHTML("nav.html");
+			//nav.replaceWith (nav.firstChild.nextSibling);
+			</script>
+		</div>
+		<div id = "bodyDiv" name = "bodyDiv" data-role = "main" class = "ui-content">
+			<div class="navbar-static-top" align="right" id = "div" name = "div">
+					<h1 class="big-title">אודות האתר</h1>
+			</div>
+		</div>
+		<div id = "footer" name = "footer" data-role = "footer">
+			<script>
+			var fileName = location.href.split("/").pop();
+			var html = getHTML("footer.html").replace(new RegExp("index.html", 'g'), fileName);
+			footer.innerHTML = html;
+			//footer.replaceWith (footer.firstChild.nextSibling);
+			</script>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		
+		<script type = "text/javascript" src = "JS/jquery-ui.js"></script>
+		<script type = "text/javascript" src = "JS/bootstrap-dialog.js"></script>
+		
+		<script>
+			window.___gcfg = {lang: 'iw'};
+
+			var body = document.getElementsByTagName("body")[0];
+			var Bottom = document.getElementsByTagName("footer")[0];
+			var Top = document.getElementsByTagName("nav")[0];
+			bodyDiv.style.paddingTop = (Top.offsetHeight - 1) + "px";
+			bodyDiv.style.paddingBottom = (Bottom.offsetHeight - 1) + "px";
+		</script>
+		</div>
+	</body>
+</html>

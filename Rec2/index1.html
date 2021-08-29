@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he">
+
+	<head>
+		<meta name="description" content="מתכונים">
+		<meta name="author" content="רומן">
+		<meta name="generator" content="slidify" />
+
+		<meta property="og:title" content="מתכונים">
+		<meta property="og:type" content="מתכונים">
+		<meta name="ROBOTS" content="index, follow">
+		<meta property="og:description" content="מתכונים">
+		<meta property="og:site_name" content="GitHub" />
+
+		<meta property="og:locale" content="heb_IS" />
+		<meta property="og:locale:alternate" content="en_GB" />
+		<meta property="og:locale:alternate" content="rus_RUS" />
+
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />-->
+		<TITLE>מתכונים</TITLE>
+
+
+		<link rel="stylesheet" href="CSS/jquery-ui.css">
+		<link rel="stylesheet" href="CSS/jquery.mobile-1.4.5.min.js.css">
+		<link rel="stylesheet" href="CSS/bootstrap-dialog.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" href="CSS/Main2.css">
+		
+		<script type = "text/javascript" src = "https://apis.google.com/js/platform.js" async = "true"></script>		
+		<script type = "text/javascript" src = "JS/Main2.js"></script>		
+		
+		<!--<script type = "text/javascript" src = "JS/sweetalert-dev.js"></script>
+		<link rel="stylesheet" href="CSS/sweetalert.css">
+		<link rel="stylesheet" href="CSS/facebook.css">-->
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+		 window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1616981855234875',
+				xfbml      : true,
+				version    : 'v2.10'
+			});
+			FB.AppEvents.logPageView();
+		};
+		
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=1616981855234875";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		
+   <div class="container-fluid">
+        		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-toggle="tooltip" title = "תפריט ניווט">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!--<a class="navbar-brand" href="javascript:void(0);" onclick = "hideshowBlogMenu();">-->
+					<a class="navbar-brand" href="javascript:void(0);">
+						<i class="glyphicon glyphicon-menu-hamburger"></i>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a data-toggle="tooltip" title = "דף הבית" id = "Home" name = "Home" href="home.html">
+								<span class="glyphicon glyphicon-home"/> דף-הבית
+							</a>
+						</li>
+						<li>
+							<a data-toggle="tooltip" title = "תפריט" href="menu.html">
+								<span>תפריט</span>
+							</a>
+						</li>
+					</ul>
+					<div class="navbar-form navbar-left" role="search">
+						<div class="form-group form-vertical">
+							<!-- <select class="form-control" style = "text-align: right; border-radius: 0; width: 35%;">	
+								<option value = "Author">מחבר</option>	
+								<option value = "Rec">מתכון</option>	
+								<option value = "Type">סוג מתכון</option>	
+							</select> -->
+							<div class="input-group" title = "חיפוש">
+								<input type="text" class="form-control" placeholder = "חיפוש"
+								id = "search_text" name = "search_text" style = "border-radius: 0; text-align: right; margin-left: -4px;"/>
+								<div class="input-group-btn">
+									<button class="btn btn-default" data-toggle="tooltip" title = "שלח" style = "margin-left: -4px;" 
+									onclick = "Search(search_text.value);">
+										<i class="glyphicon glyphicon-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a data-toggle="tooltip" title = "אודות" id = "About" name = "About" href="about.html">
+								<span class="glyphicon glyphicon-info-sign"/> אודות
+							</a>
+						</li>
+					</ul>
+				</div>
+			
+			</div>
+		</nav>
+
+    </div>
+    <div class="page-header">
+        <div class="clearfix">
+				<h1 class="h1">שקשוקה 1</h1>
+		</div>
+	</div>
+        <div class="container">
+        <div class="row">
+			<table class="navbar-right" style="margin-right: 105px;">
+				<tr><th colspan = "4"/><th>:מצרכים</th></tr>
+				<tr><td colspan = "2"/><td>בצל קצוץ דק</td><td width = "45em">1</td><td /></tr>
+				<tr><td colspan = "2"/><td>פלפל חריף קצוץ דק לפי הטעם</td><td colspan = "2"/></tr>
+				<tr><td colspan = "2"/><td>רבע גמבה קצוצה לחתיכות קטנות</td><td colspan = "2"/></tr>
+				<tr><td colspan = "2"/><td>עגבניות קצוצות דק</td><td>2 - 3</td><td /></tr>
+				<tr><td colspan = "2"/><td>שיני שום כתושות או קצוצות</td><td>2 - 5</td><td /></tr>
+				<tr><td colspan = "2"/><td>ביצים</td><td>3 - 4</td><td /></tr>
+				<tr><td colspan = "2"/><td>כף רסק עגבניות</td><td colspan = "2"/></tr>
+				<tr><td colspan = "2"/><td>מעט מים בשביל הרוטב</td><td colspan = "2"/></tr>
+				<tr><td colspan = "2"/><td>תבלינים: מלח, פפריקה, פלפל שחור, מעט סוכר לפי הטעם</td><td colspan = "2"/></tr>
+
+				<tr><td colspan = "2"/><td><BR/></td><td colspan = "2"/></tr>
+					
+				<tr><th colspan = "4"/><th>:אופן ההכנה</th></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >מטגנים את הבצל והפלפלים על במחבט בגודל בינוני על אש בינונית-נמוכה</td><td colspan = "2"> .1</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >אחרי כ5-10 דקות מוסיפים את הגמבות</td><td colspan = "2"> .2</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >אחרי כ5-10 דקות מוסיפים את השום</td><td colspan = "2"> .3</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >אחרי כ5 דקות של טיגון מוסיפים את העגבניות והתבלינים</td><td colspan = "2"> .4</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >אחרי כ5-10 דקות, מוסיפים את רסק העגבניות, מעט מים ומכסים את המחבת. מבשלים עוד כ5-7 דקות לריכוך מלא של העגבניות</td><td colspan = "2"> .5</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >יוצרים גומות, שוברים בזעירות את הביצים ומכסים</td><td colspan = "2"> .6</td></tr>
+				<tr><td colspan = "2"/><td class = "Rec" >לקבלת ביצים רכות מבשלים כ5 דקות, ולקבלת ביצים קשות מבשלים כ10 דקות</td><td colspan = "2"></td></tr>
+
+				<!--<tr><td colspan = "2"/><td><BR/></td><td colspan = "2"/></tr>
+				<tr><th colspan = "2"></th><td>אם הרוטב בעל חמיצות של עגבניות, ניתן לשים מעט סוכר</td><th /><th>:הערות</th></tr>-->
+			</table>
+    </div>		
+
+	<script>
+			window.___gcfg = {lang: 'iw'};
+
+			/*var body = document.getElementsByTagName("body")[0];
+			var Bottom = document.getElementsByTagName("footer")[0];
+			var Top = document.getElementsByTagName("nav")[0];
+			bodyDiv.style.paddingTop = (Top.offsetHeight - 1) + "px";
+			bodyDiv.style.paddingBottom = (Bottom.offsetHeight - 1) + "px";*/
+		</script>
+
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type = "text/javascript" src = "JS/jquery-ui.js"></script>
+		<script type = "text/javascript" src = "JS/jquery.mobile-1.4.5.js"></script>
+		<script type = "text/javascript" src = "JS/bootstrap-dialog.js"></script>
+
+		
+	</body>
+</html>

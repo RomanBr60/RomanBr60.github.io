@@ -1,0 +1,38 @@
+body, html { 	
+	background-image: url("https://romanbr.github.io/Rec/recbg.jpg");
+}
+
+h1, th, .href {
+	text-decoration: underline;
+}
+
+.h1 , th { font-family: Georgia, serif; font-style: italic; }
+
+.h1 {
+	font-size: 2em;
+	padding-top: 0;
+	top: 0;
+	margin-top: 0;
+	background-color: #555;
+}
+
+h1, .h1	{ text-align: center; }
+
+.text, .h1 {
+	text-shadow: -2px -1px 0 black;
+	letter-spacing: 3px;
+}
+
+.text, .h1 { color: silver; }
+
+
+th, td, dl, dt, dd, ul, li, .href1 { text-align: right; }
+th { font-size: 1.5em; color: #AA1F23; }
+td { font-size: 1.15em; }
+
+.href, .href:hover, .href:active { color: black; }
+#div { 
+		top: 5%;
+		margin-top: 5%;
+		margin-bottom: 5%;
+}

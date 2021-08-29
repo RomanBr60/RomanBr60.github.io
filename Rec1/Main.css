@@ -1,0 +1,38 @@
+html, body {
+	background-image: url("https://romanbr.github.io/Rec/recbg.jpg");
+}
+
+iframe {
+	width: 100%;
+	margin-top: 51px;
+	border: none;
+	position: fixed;
+}
+
+footer {
+	text-align: center;
+	background-color: #555;
+	letter-spacing: 3px;
+	font-size: 1.75em;
+	text-decoration: underline;
+	
+	color: silver;
+	padding: 5px;
+	width: 100%; 
+		
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.text {
+	text-shadow: -2px -1px 0 black;
+	letter-spacing: 3px;
+}
+
+.dropdown-item:hover { background-color: lightgrey; }
+.dropdown-menu { width: 10em;}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+ }
