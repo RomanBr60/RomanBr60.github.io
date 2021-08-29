@@ -1,0 +1,110 @@
+body	{
+	position: fixed;
+	min-height: 100%;
+	
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	left: 0;
+	right: 0;
+}
+
+footer, nav {
+}		
+
+.jumbotron, #blogText, #blogText > div {  
+	text-align: justify; 
+	float: right; 
+}
+
+#blogText { position: relative; float: right; }
+
+#blogMenu > ul > li:not(.active):hover > a:hover { 
+	background-color: silver; 
+	border-radius: 10px;	
+	height: 100%;
+	width: 100%;
+}
+
+#blogMenu > ul > li > a {
+	border-radius: 10px;	
+	line-height: .7em;
+	height: 100%;
+	width: 100%;
+}
+
+
+.header, .subHeader, .subHeader1, .header > h1, .header > h4, .header > h2, .textBody{ 
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+
+.header > h1, .header > h4, .header > h2, .subHeader > h4, .subHeader1 > h5 { float: left; }
+.header, .subHeader { border-bottom: 1px solid #a2a9b1; }
+.subHeader1 > h5 { margin-bottom: 0; bottom: 0;}
+
+.textBody {
+	font-size: 90%;
+	line-height: 1.5em;
+	float: left;
+}
+.textBody, .textBody p {text-align: justify; }
+.textBody ul { padding-left: 15px; clear: left; }
+.affix {
+      top: 20px;
+ }
+
+ 
+#blogMenu {
+	background-color: #f1f1f1;
+	height: 100%;
+	border-right:1px solid black; 
+	margin: 0;
+	padding: 0;
+	float: left; 
+}
+
+#blogInfo {
+	border: 1px solid; 
+	left: 5px; 
+	text-align: center;
+	float: right;
+}
+
+#blogInfo > label { width: 100%; background-color:#b0c4de; }
+
+.equalheight > div[class*='col-'] { 
+  display: flex;
+  flex-direction: column;
+  overflow:hidden; 
+
+}
+
+footer {
+      background-color: #555;
+      color: white;
+      padding: 5px;
+	  width: 100%; 
+	
+	right: 0;
+	bottom: 0;
+    left: 0;
+
+
+}
+
+#iframe {
+	width: 100%;
+	margin-top: 51px;
+	border: none;
+}
+
+.dropdown-item:hover { background-color: lightgrey; }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+ }
