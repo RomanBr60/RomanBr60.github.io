@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he">
+
+	<head>
+		<meta name="description" content="מתכונים">
+		<meta name="author" content="רומן">
+		<meta name="generator" content="slidify" />
+
+		<meta property="og:title" content="מתכונים">
+		<meta property="og:type" content="מתכונים">
+		<meta name="ROBOTS" content="index, follow">
+		<meta property="og:description" content="מתכונים">
+		<meta property="og:site_name" content="GitHub" />
+
+		<meta property="og:locale" content="heb_IS" />
+		<meta property="og:locale:alternate" content="en_GB" />
+		<meta property="og:locale:alternate" content="rus_RUS" />
+
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />-->
+		<TITLE>מתכונים</TITLE>
+
+
+		<link rel="stylesheet" href="CSS/jquery-ui.css">
+		<link rel="stylesheet" href="CSS/jquery.mobile-1.4.5.min.js.css">
+		<link rel="stylesheet" href="CSS/bootstrap-dialog.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="CSS/docs.css">
+
+		<link rel="stylesheet" href="CSS/Main.css">
+		
+		<script type = "text/javascript" src = "https://apis.google.com/js/platform.js" async = "true"></script>		
+		<script type = "text/javascript" src = "JS/Main0.js"></script>		
+		<script type = "text/javascript" src = "JS/Main.js"></script>
+		
+		<!--<script type = "text/javascript" src = "JS/sweetalert-dev.js"></script>
+		<link rel="stylesheet" href="CSS/sweetalert.css">
+		<link rel="stylesheet" href="CSS/facebook.css">-->
+
+		
+	</head>
+	<body data-spy="scroll" data-target=".navbar-static-top" data-twttr-rendered="true">
+		<div id="fb-root"></div>
+		<script>
+		 window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1616981855234875',
+				xfbml      : true,
+				version    : 'v2.10'
+			});
+			FB.AppEvents.logPageView();
+		};
+		
+		(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=1616981855234875";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+	
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-toggle="tooltip" title = "תפריט ניווט">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!--<a class="navbar-brand" href="javascript:void(0);" onclick = "hideshowBlogMenu();">-->
+					<a class="navbar-brand" href="javascript:void(0);">
+						<span class="glyphicon glyphicon-menu-hamburger"></span>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a data-toggle="tooltip" title = "דף הבית" id = "Home" name = "Home" href="home.html" target = "iframe">
+								<!--<span class="glyphicon glyphicon-home"/>--><span>דף הבית</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav" id = "menu" name = "menu">
+					</ul>
+					<div class="navbar-form navbar-left" role="search">
+						<div class="form-group form-vertical">
+							<!-- <select class="form-control" style = "text-align: right; border-radius: 0; width: 35%;">	
+								<option value = "Author">מחבר</option>	
+								<option value = "Rec">מתכון</option>	
+								<option value = "Type">סוג מתכון</option>	
+							</select> -->
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder = "חיפוש"
+								id = "search_text" name = "search_text" style = "border-radius: 0; text-align: right; margin-left: -4px;">
+								<div class="input-group-btn">
+									<button class="btn btn-default" data-toggle="tooltip" title = "שלח" style = "margin-left: -4px; margin-right: -14px;" 
+									onclick = "Search(search_text.value);">
+										<i class="glyphicon glyphicon-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a data-toggle="tooltip" title = "אודות" id = "About" name = "About" href="about.html" target = "iframe">
+								<!--<span class="glyphicon glyphicon-home"/>--><span>אודות</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			
+			</div>
+		</nav>
+		
+		<iframe class="navbar-static-top navbar-static-bottom" id = "iframe" name = "iframe" src = "" frameborder="0"> 
+		</iframe>
+		
+		<footer class = "text container-fluid navbar-fixed-bottom text-center" id = "foot" name = "foot">
+			<div class = "text-left navbar-left social" style="position: absolute;">
+				
+				<div id = "tweetBtn"><a class="twitter-share-button"
+					href="https://twitter.com/intent/tweet" data-size="large">
+				Tweet</a></div>
+				<div class="fb-like" 
+					data-href="https://RomanBr60.github.io/index.html"
+					data-layout="button_count"
+					data-action="like" data-size="large"
+					data-show-faces="true"
+					data-share="true">
+				</div>
+				<span class="g-plus" data-action="share" data-annotation="bubble" data-height="24" data-href="https://romanbr60.github.io/index.html"></span>
+				<span class="g-plusone" data-size="tall" data-callback="https://romanbr60.github.io/index.html"></span>
+			</div>
+			<span class = "text-center" style="position: relative;">!בתאבון</span>
+		</footer>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type = "text/javascript" src = "JS/jquery-ui.js"></script>
+		<script type = "text/javascript" src = "JS/jquery.mobile-1.4.5.js"></script>
+		<script type = "text/javascript" src = "JS/bootstrap-dialog.js"></script>
+		<script type = "text/javascript" src = "JS/docs.js"></script>
+
+		
+		<script>
+			window.___gcfg = {lang: 'iw'};
+			load_programme();
+			var iframe = document.getElementsByTagName("iframe")[0];
+			var Bottom = document.getElementsByTagName("footer")[0];
+			var Top = document.getElementsByTagName("nav")[0];
+			iframe.style.paddingTop = (Top.offsetHeight - 1) + "px";
+			iframe.style.paddingBottom = (Bottom.offsetHeight - 1) + "px";
+			
+			/*var fb = document.getElementsByClassName("fb-like")[0];
+			
+			var e1 = document.getElementsByClassName("twitter-share-button")[0];
+			var e2 = document.getElementsByClassName("g-plus")[0];
+			var e3 = document.getElementsByClassName("g-plusone")[0];
+			
+			e1.style = "top: 50%; margin-top: -50px;";
+			e2.style.paddingTop = ((foot.offsetHeight - e2.offsetHeight) / 2) + "px";
+			e3.style.paddingTop = ((foot.offsetHeight - e3.offsetHeight) / 2) + "px";
+
+			 
+			/*e1.style.paddingTop = ((foot.offsetHeight - e1.offsetHeight) / 2) + "px";
+			e2.style.paddingTop = ((foot.offsetHeight - e2.offsetHeight) / 2) + "px";
+			e3.style.paddingTop = ((foot.offsetHeight - e3.offsetHeight) / 2) + "px";*/
+		
+			/*$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip({placement : 'bottom'});
+			});*/
+		</script>
+		
+	</body>
+</html>

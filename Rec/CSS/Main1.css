@@ -1,0 +1,75 @@
+body, html { 	
+	background-image: url('../Other/recbg.jpg');
+	height: 100%;
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+body {
+	position: absolute;	
+}
+
+.text, .h1, .h11 {
+	text-shadow: -2px -1px 0 black;
+	letter-spacing: 3px;
+	color: silver; 
+}
+
+.h1, .h11, th, .th, .href {
+	text-decoration: underline;
+}
+
+.h1 , th, .th { font-family: Georgia, serif; font-style: italic; }
+
+.h1 {
+	text-align: center;
+	font-size: 2em;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 5px;
+	background-color: #555;
+	width: 100%;
+}
+
+.h11 {
+	text-align: center;
+	margin-top: 5px;
+	padding-top: 0;
+	padding-bottom: 5px;
+}
+
+
+th, .th, td, dl, dt, dd, ul, li { text-align: right; }
+th, .th { font-size: 1.45em; color: #AA1F23; }
+td { font-size: 1.15em; }
+
+.href, .href:hover, .href:active { color: black; }
+#link { margin-top: -7px; 
+	
+}
+
+.div1 {
+	margin-right: 15px;
+}
+
+.jumb { 
+	margin-top: 0; 
+	padding-top: 0;
+	top: 0; 
+	background-color: transparent;
+	font-size: 1.25em;
+ }
+
+.well1 { 
+	margin-top: 0; 
+	padding-top: 0;
+	top: 0; 
+	background-color: transparent;
+	font-size: 1.25em;
+ }
