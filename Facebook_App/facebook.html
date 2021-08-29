@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Facebook app</title>
+
+		<meta property="fb:app_id" content="1616981855234875" /> 
+		<meta property="og:url" content="https://romanbr.github.io/facebook.html/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Facebook app" />
+		<meta property="og:image" content="https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.0-1/p50x50/14731097_1073726669392477_98653805612467697_n.jpg?_nc_cat=0&oh=aa249a8e7f2f66a9ecd5cd9a0e805eb2&oe=5B29B8C4" /> 
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" title="Default Style" href="Facebook.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->
+
+		<!-- Facebook Pixel Code -->
+		<script>
+		  !function(f,b,e,v,n,t,s)
+		  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		  n.queue=[];t=b.createElement(e);t.async=!0;
+		  t.src=v;s=b.getElementsByTagName(e)[0];
+		  s.parentNode.insertBefore(t,s)}(window, document,'script',
+		  'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '365485023933940');
+		  fbq('track', 'PageView');
+		</script>
+		<noscript><img height="1" width="1" style="display:none"
+		  src="https://www.facebook.com/tr?id=365485023933940&ev=PageView&noscript=1"
+		/></noscript>
+		<!-- End Facebook Pixel Code -->
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<input type = "hidden" id = "myID" name = "myID" />
+		<input type = "hidden" id = "profs" name = "profs" />
+		<br/>
+		<div class="container-fluid">
+			<div class="row content row-eq-height">
+				<div class="equalheight">      
+					
+					<div class="col-lg-2 col-sm-2 col-xs-2 navbar-fixed-top" id = "profile"> 
+						<div id = "profImg" name = "profImg" class = "text-center"></div>
+						<div id = "profInfo" name = "profInfo"></div>
+					</div>
+
+					<div class = "col-lg-10 col-sm-10 col-xs-10" id = "form">
+						<form class="form-horizontal">
+							<div class="form-group row">
+								<div class="col-lg-6 col-lg-offset-2">
+									<fb:login-button id = "loginBtn" scope="public_profile,email,user_birthday,user_friends,publish_actions,user_hometown,user_location" onlogin="checkLoginState();"
+									style = "display: none;"></fb:login-button>
+									<!--<div class="fb-login-button" id = "loginBtn" data-size="small" data-button-type="login_with" 
+									data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" 
+									onlogin="checkLoginState();"></div>-->
+									<span id="status" class = "label label-success"></span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="link" class="col-lg-2 control-label">Link</label>
+								<div class="col-lg-6">
+									<input type="text" value="" class="form-control" id="link" name = "link" placeholder="Your link goes here.">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="message" class="col-lg-2 control-label">Message</label>
+								<div class="col-lg-6">
+									<textarea class="form-control" rows="3" placeholder="Type your message here." id="message" name="message"></textarea>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="groups" class="col-lg-2 control-label">Groups</label>
+								<div class="col-lg-6">
+									<select multiple="" class="form-control" id="groups" size = "7"></select>
+									<span class="help-block label label-success">Select your groups.</span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="friends" class="col-lg-2 control-label">Friends</label>
+								<div class="col-lg-6">
+									<select class="form-control col-lg-4" id="friends" size = "7"></select>
+									<span class="help-block label label-success">Select your friends.</span>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-lg-4 col-lg-offset-2">
+									<!--<button type="button" onclick="post();" class="btn btn-primary">Post to Groups</button>-->
+									<button type="button" onclick="onButtonClick();" class="btn btn-primary">Post to Groups</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script>
+			var users = {};
+
+			function onButtonClick() {
+			  // Add this to a button's onclick handler
+			  //FB.AppEvents.logEvent("sentFriendRequest");
+			  	//FB.api('/me/feed', 'post', {message: message.value, link: link.value }, function(response) {
+				var opts = { message : message.value };				
+				
+				FB.api('/me/feed', 'post', opts, function(response) {
+					if (response.error) { console.log (response.error); return; }
+					alert("Posted!")
+				});
+			}
+
+		</script>
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId            : '1616981855234875',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					cookie			 : true,
+					status			 : true,
+					oauth			 : true,
+					version          : 'v2.12'
+				});
+				
+				FB.AppEvents.logPageView();				
+				checkLoginState ();	
+			};
+
+			(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=1616981855234875&autoLogAppEvents=1';
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+			 // This function is called when someone finishes with the Login
+			 // Button.  See the onlogin handler attached to it in the sample
+			 // code below.
+			
+			function checkLoginState() {
+				FB.getLoginStatus(statusChangeCallback);
+			}
+
+			// This is called with the results from from FB.getLoginStatus().
+			
+			function statusChangeCallback(response) {
+				console.log('statusChangeCallback');
+				console.log(response);
+				// The response object is returned with a status field that lets the
+				// app know the current login status of the person.
+				// Full docs on the response object can be found in the documentation
+				// for FB.getLoginStatus().
+				if (response.status === 'connected') {
+					// Logged into your app and Facebook.
+					document.getElementById('loginBtn').style.display = 'none';
+					testAPI();
+				} else if (response.status === 'not_authorized') {
+					// The person is logged into Facebook, but not your app.
+					document.getElementById('loginBtn').style.display = 'block';
+					document.getElementById('status').innerHTML = 'Please log into this app.';
+				} else {
+					// The person is not logged into Facebook, so we're not sure if
+					// they are logged into this app or not.
+					document.getElementById('loginBtn').style.display = 'none';
+					document.getElementById('status').innerHTML = 'Please log ' +
+						'into Facebook.';
+				}
+			}
+			
+			function testAPI() {
+				var arr;
+				console.log('Welcome!  Fetching your information.... ');
+				//addUsers ();
+
+				FB.api('/me', 'GET', {fields: 'name, id' }, 
+				function(response) {
+					if (response && !response.error) {
+						//alert (users[response.id]);
+						users = {};
+						console.log('Successful login for: ' + response.name);
+						myID.value = response.id;
+						setUserData (myID.value);
+
+						arr = getGroupListFromId (myID.value);
+						
+						var friendsList = document.getElementById('friends');
+						friendsList.innerHTML = "";
+						var opt = document.createElement("option");
+						opt.value = myID.value;
+						opt.title = myID.value;
+						opt.innerHTML = "me";
+						opt.onclick = function () {
+							setProfileTab (this.value);
+						}
+							
+						friendsList.appendChild(opt);
+						setLists (arr);
+						//setProfileTab (myID.value);
+					}
+					else { console.log (response.error); }
+				});
+			}
+
+			function setLists (groups) {
+				var k = 0
+				var name;
+				for (i = 0; i < groups.length; i++) {
+					setItemList (i);
+				}
+				
+				var friendsList = document.getElementById('friends');
+				FB.api('/me/friends', "GET", {}, function(response) {
+					console.log(response);
+					if (response.error) { console.log(response.error); return; }
+					for (i = 0; i < response.data.length; i++) {
+						setUserData (response.data[i].id);
+						var opt = document.createElement("option");
+						opt.value = response.data[i].id;
+						opt.title = response.data[i].id;
+						opt.innerHTML = response.data[i].name;
+						opt.onclick = function () {
+							setProfileTab (this.value);
+						}
+						friendsList.appendChild(opt);
+					}
+				}, {
+					scope: 'user_friends'
+				});
+
+				/*FB.api('/me/family', "GET", {}, function(response) {
+					console.log(response);
+					if (response && !response.error) {
+						for (i = 0; i < response.data.length; i++) {
+							if (users[response.data[i].id] != undefined) continue;
+							var opt = document.createElement("option");
+							opt.value = response.data[i].id;
+							opt.title = response.data[i].id;
+							opt.innerHTML = response.data[i].name;
+							opt.onclick = function () {
+								setProfileTab (this.value);
+							}
+							
+							alert (opt.innerHTML);
+							friendsList.appendChild(opt);
+							//setProfileFriends (opt.value);
+						}
+					} else {
+						console.log(response.error)
+					}
+					
+				}, {
+					scope: 'user_family'
+				});*/
+				
+				function setItemList (j) {
+					var groupList = document.getElementById('groups');
+					groupList.innerHTML = "";
+					FB.api("/" + + groups[j] + "/members", function (response) {
+						/*if (response.error) {
+							console.log(response.error);
+							alert (j);
+							return;
+						}*/
+					});
+
+					FB.api('/' + groups[j], function(response) {
+						//if ((response.error) || (response.id != groups[j])) {
+						if (response.error) {
+							console.log ("Error group: " + groups[j]);
+							return;
+						}
+						
+						var opt = document.createElement("option");
+						opt.value = response.id;
+						opt.title = response.id;
+						//opt.innerHTML = ((++k < 10) ? ('0' + k) : k) + '. ' + response.name;
+						opt.innerHTML = response.name;
+						opt.ondblclick = function () {
+							var id = prompt("Enter new group ID");
+							var find = document.querySelector('[value="' + id + '"]');
+							if (find != null) {
+								alert (id + " already exist in the list");
+								return;
+							}
+							
+							var option  = this
+							if (id.trim() == "") return;
+							FB.api('/' + id, function(response) {
+								if (response.error) {
+									alert ("There is no such group: " + response.id);
+									return;
+								}
+								
+								option.value = response.id;
+								opt.title = response.id;
+								option.innerHTML = response.name;
+							});
+						}
+						
+						groupList.appendChild(opt);
+
+					}, {
+						scope: 'public_profile, user_groups'
+					});
+				}
+			
+			}
+
+			/*function postToSelectedGroups() {
+				var groupList = document.getElementById('groups');
+
+				var selectedGroupIds = [];
+				for (var i = 0; i < groupList.length; i++) {
+					//if (groupList[i].selected) {
+						selectedGroupIds.push(groupList[i].value);
+					//}
+				}
+
+				function postOrFinish() {
+					if (selectedGroupIds.length > 0) {
+						var groupId = selectedGroupIds.pop();
+						var message = document.getElementById("message").value;
+						var link = document.getElementById("link").value;
+						FB.api(
+							"/" + groupId + "/feed",
+							"POST", {
+								"message": message,
+								"link": link
+							},
+							function(response) {
+								if (response.error) {
+									console.log(response.error);
+								}
+								setTimeout(postOrFinish, 1000);
+							}, {
+								scope: 'publish_actions'
+							});
+					} else {
+						alert('All done!');
+					}
+				}
+
+				postOrFinish();
+			}
+			
+			function post () {
+				var link = document.getElementById("link").value;
+				var message = document.getElementById("message").value;
+				var groupID = document.getElementById('groups')[0].value;
+				FB.api('/' + groupID + '/feed', 
+					"POST", {
+					"message": message, 
+					"link": link 
+					}, function(response) {
+						if (response && !response.error) {
+							console.log (response);
+						} else {
+							console.log (response.error);
+						}
+					
+					}, {
+						scope: 'user_groups,publish_actions'
+					});
+
+			}*/
+			
+			function setUserData (id) {
+				if ((users[id] != null) || (users[id] != undefined)){
+					alert ("User alreasy exists");
+					return;
+				}
+
+				FB.api('/' + id, 'GET', {fields: 'first_name,middle_name,last_name,gender,email,birthday,name,id,picture.width(150).height(150)'},
+				function(response) {
+					if (response.error) { alert ("Error"); return; }
+					setUser (response);
+					if (response.birthday != undefined) setAge (response.birthday);
+				});
+				
+				FB.api('/' + id + '/friends', "GET", {}, function(response) {
+					if (response.error) { alert ("Error"); return; }
+					setFriends(response);
+				}, {
+					scope: 'user_friends'
+				});
+
+				function setFriends (response) { 
+					users[id].friends_count = response.summary.total_count; 	
+					if (id == myID.value) setProfileTab (id);
+				}
+				
+				function setUser (response) {
+					var profile = {
+						id : response.id,
+						name : response.name,
+						first_name : response.first_name,
+						middle_name : response.middle_name,
+						last_name : response.last_name,
+						email : response.email,
+						gender : response.gender,
+						birthday : response.birthday,
+						picture: response.picture.data.url
+					};	
+					users[id] = profile;
+				}
+				
+				function setAge(born) {
+					born = new Date(born);
+					var now = new Date();
+					var birthday = new Date(now.getFullYear(), born.getMonth(), born.getDate());
+					if (now >= birthday) users[id].age = now.getFullYear() - born.getFullYear();
+					else users[id].age = now.getFullYear() - born.getFullYear() - 1;
+				}
+			}
+				
+			function setProfileTab (id) {
+				if ((users[id] == null) || (users[id] == undefined)){
+					alert ("User doesn't exist");
+					return;
+				}
+
+				function addProfileInfo (txt) {
+					document.getElementById('profInfo').innerHTML += 
+					"<span class='control-label bg-info col-lg-12 text-left'>" + txt + "</span><br/>";
+				}
+				
+				profImg.innerHTML = "<img class='img-fluid img-thumbnail' src='" + users[id].picture + "'>";
+				profInfo.innerHTML = "";
+				addProfileInfo('Name: ' + users[id].name);
+				addProfileInfo('Age: ' +  users[id].age);
+				addProfileInfo('First name: ' + users[id].first_name);
+				addProfileInfo('Middle name: ' + users[id].middle_name);
+				addProfileInfo('Last name: ' + users[id].last_name);
+				addProfileInfo('Gender: ' + users[id].gender);			
+				addProfileInfo('Birthday: ' +  users[id].birthday);
+				addProfileInfo('ID: ' +  users[id].id);
+				addProfileInfo('Email: ' +  users[id].email);
+				
+				if (id == myID.value) { addProfileInfo('You have: ' +  users[id].friends_count + " friends"); }
+				else { addProfileInfo(users[id].first_name + ' have: ' +  users[id].friends_count + " friends"); }
+			}
+			
+			function getGroupListFromId (id) {
+				var arr;
+				if (id == "831703023594844") arr = ["126836937783851", "271365913259411", "283159325102431", "449718845094074", "600333063448401",
+					"632503653440157", "691797114251172", "1433450830215404", "1458524017791122", "1587590338212583", "805098252892973",
+					"1398609710464154", "1295966243826233", "1470928673126762", "1661867994060581", "583599248477965", "506451599431322",
+					"516963205067004", "658206034304362", "631502033537819", "267321010272211", "1824892561069891", "1889301857970797",
+					"630933000408737", "163196000847694", "161256897360418", "1777936665818376", "576059819266911", "261044567355031",
+					"1170966216288925", "1250871265008035", "991231990897243", "194280137331404", "215529328475209", "396397370447996",
+					"129102877911572", "184898395413171", "205910812845", "1916027555350592", "1768222933407578", "558374874345499",
+					"1527852314195270", "1627469997277817", "460716987457729", "1069323039817908", "1761394084168641", "1400829153551841",
+					"151778792160374", "28593018432", "1682472048671472", "511475192272231", "1319675624751363", "1527604680629948",
+					"1605254839691666", "552890501769010"];	
+					
+				if (id == "806586766175447") arr = ["1038587399527082", "465775113599364"];	
+					
+				if (id == "472066586507221") arr = ["1060086307435639", "336545236443892", "608057232865595", "1600115756918049", "104834813219942",
+					"1172350686108290", "1953547484933057", "1129050227110249", "1707594606141037", "324154004753567", "136824213116747",
+					"146785092092843", "113842655320989", "1433450830215404", "1196215953764647", "158289821540929", "1427398547583010", 
+					"921220137925958", "320394304972500"];
+					
+				return arr;	
+			}
+		
+		//Weather-Key: 39ef78ae7a9ed555
+		</script>
+		<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115749034-1"></script>
+		<script type='text/javascript'>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+			  var gads = document.createElement('script');
+			  gads.async = true;
+			  gads.type = 'text/javascript';
+			  var useSSL = 'https:' == document.location.protocol;
+			  gads.src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt.js';
+			  var node = document.getElementsByTagName('script')[0];
+			  node.parentNode.insertBefore(gads, node);
+			  
+			})();
+		
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-115749034-1');
+		</script>-->
+	</body>
+</html>

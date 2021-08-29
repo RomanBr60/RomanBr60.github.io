@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="robots" content="index,imageindex, archive, follow">
+		<meta id="viewport" name="viewport" content="width=device-width, height=device-height user-scalable=yes"> 
+		
+		<!-- initial-scale=0, minimum-scale=0, maximum-scale=1"> -->
+		<!-- <meta http-equiv="refresh" content="0;" /> -->
+
+		<meta name="referrer" content="origin-when-crossorigin" id="meta_referrer" />
+
+
+		<title>Device API Example</title>
+		<script>
+			//var navigator.battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+
+			var light1 = 0, light2 = 0;
+			var prox2 = 0, prox1 = "";
+				window.addEventListener("devicelight", function(event) {
+					light1 = event.value;
+					//light level is returned in lux units
+					document.querySelector('#rot3').textContent = "Light level: " + light1 + " " + light2; 
+				});
+
+				window.addEventListener("lightlevel", function(event) {
+				   light2 = event.value;
+					//light value can be dim, normal or bright
+				   document.querySelector('#rot3').textContent = "Light level: " + light1 + " " + light2; 
+				});
+
+				
+
+				
+				window.addEventListener('deviceproximity', function(event) {
+					// The maximum distance the sensor covers (in cm).
+					var max = event.max;
+
+					// The minimum distance the sensor covers (in cm).
+					var min = event.min;
+
+					// The device proximity (in cm).
+					var proximity = event.value;
+					var prox2 = event.value;
+					document.querySelector('#rot1').textContent = "Proximaty: " + prox1 + " " + prox2; 
+				});	
+				
+				window.addEventListener('userproximity', function(event) {
+					if(event.near == true) {
+						prox1 = "Object is near";
+					} else {
+						prox1 = "Object is far";
+					}
+					document.querySelector('#rot1').textContent = "Proximaty: " + prox1 + " " + prox2;
+				});
+				
+				
+				window.addEventListener('orientationchange', function (e) {
+					document.querySelector('#rot2').textContent = "rotation: " + window.orientation;
+				}, false);
+				
+				window.onload = function() {
+					function updateBatteryStatus(battery) {
+						document.querySelector('#charging').textContent = battery.charging ? 'charging': 'not charging';
+						document.querySelector('#level').textContent =  Math.round(battery.level * 100) + "%";
+						document.querySelector('#dischargingTime').textContent = "discharging time: " + (battery.dischargingTime / 60);
+						document.querySelector('#chargingtimechange').textContent = "charging time: " + (battery.chargingTime / 60);
+					}
+
+					navigator.getBattery().then(function(battery) {
+						// Update the battery status initially when the promise resolves ...
+							updateBatteryLevel(battery);
+							updateBatteryStatus(battery);
+						
+						// .. and for any subsequent updates.
+						battery.onchargingchange = function() {
+							updateBatteryStatus(battery);
+						};
+
+						battery.onlevelchange = function() {
+							updateBatteryStatus(battery);
+						};
+
+						battery.ondischargingtimechange = function() {
+							updateBatteryStatus(battery);
+						};
+					});
+				};
+		</script>
+		<style>
+			@media (light-level: normal) {
+			  html { background: url("http://www.w3.org/Icons/Backgrounds/OldPaper.gif"); color: #333 }
+			}
+			@media (light-level: dim) {
+			  html { background: #222; color: #ccc }
+			}
+			@media (light-level: washed) {
+			  html { background: white; color: black; font-size: 2em; }
+			}
+
+			*, htm, svg, body, td, tr, table, h1, div, a {
+				align: center;
+				text-align: center;
+				align-content: center;
+			}
+
+			table {
+				align: center;
+				text-align: center;
+				align-content: center;
+			}
+
+			html {
+				background: silver;
+				margin-top: 35%;
+				background-image: 
+					url("http://www.w3.org/Icons/Backgrounds/OldPaper.gif"); 
+			}
+
+			body {
+				width: 85%;
+				margin: auto;
+				border: 1px solid black;
+				background: white;
+				border-radius: 10px;
+				box-shadow: 0 0 10px black;
+			}
+
+			h1, .text {
+				text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+				color: yellow;
+				letter-spacing: 3px;
+			}
+
+			button { 
+			height: 60px; width: 300px; 
+			font-size: 56px; font-family: monospace; 
+			}
+
+			input[type = "number"] { 
+			height: 60px;
+			font-size: 56px; font-family: monospace; 
+			align: center; text-align: left; align-content: center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<table align = "center"><tr>
+			<td>
+				<progress min = "0" max = "100" id = "btrLevel" value = "0"></progress>
+			</td>	
+			<td width = "150px;"><h1 id="level">(battery level unknown)</h1></td>
+			<td><h1 id="charging">(charging state unknown)</h1></td>
+		</tr></table>
+
+
+		<h1 id="dischargingTime">(discharging time unknown)</h1>
+		<h1 id="chargingtimechange">(charging time change)</h1>
+		<h1 id="rot1">Acc</h1>
+		<h1 id="rot2">Acc</h1>
+		<h1 id="rot3">Acc</h1>
+
+		<table align = "center"><tr>
+			<td><input type = "text" size = "16" id = "Num" maxlength = "20" required></td>
+			<td><a href="" onclick = "this.href = 'tel:' + Num.value;"><h1>Call number!</h1></a></td>
+		</tr></table>
+
+		<p>
+			<button class = "text" value = "Vibrate" onclick = "navigator.vibrate([100, 50, 200, 50, 300, 50, 400]);">Vibrate</button>
+		<br/></p>
+	
+			<script type="text/javascript">
+
+				function updateBatteryLevel(battery) {
+					var progress1 = document.getElementById("btrLevel");
+					var level = battery.level * 100;
+					var sgn = Math.sign (level - progress1.value);
+					//while (progress1.value != level) {	
+							//alert (progress1.value);
+					var i = setInterval (function() {
+								if (progress1.value == level) clearTimeout (i); 
+								progress1.value += sgn;
+					}, 2);
+				}
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,9 @@
+{
+  "name": "DeviceApi",
+  "description": "Device api example",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Your name",
+    "url": "https://github.com/RomanBr/RomanBr.Github.io/blob/master/Android"
+  }
+}
